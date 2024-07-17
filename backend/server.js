@@ -6,7 +6,7 @@ const app = express();
 const port = 5000;
 
 app.use(cors({
-  origin: ["https:/studentbuddyapp.vercel.app"],
+  origin: ["https://studentbuddyapp.vercel.app"],
   method: ["POST", "GET"],
   credentials: true
 }));
