@@ -5,7 +5,11 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: ["https:/sb-frontend.vercel.app"],
+  method: ["POST", "GET"],
+  credentials: true
+}));
 
 mongoose.connect('mongodb+srv://jindalansh498:anshjindal2512@cluster0.eanq9ox.mongodb.net/mydatabase', {
   useNewUrlParser: true,
