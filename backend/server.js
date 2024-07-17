@@ -6,7 +6,7 @@ const app = express();
 const port = 5000;
 
 app.use(cors({
-  origin: ["https:/sb-frontend.vercel.app"],
+  origin: ["https:/studentbuddyapp.vercel.app"],
   method: ["POST", "GET"],
   credentials: true
 }));
@@ -31,6 +31,10 @@ const User = mongoose.model('User', userSchema);
 
 // middleware to parse JSON 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.json("This server is running");
+})
 
 app.get('/users', async (req, res) => {
   try {
